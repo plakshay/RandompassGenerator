@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 
 
 
@@ -18,14 +18,17 @@ function App() {
 
     for( let i=1;i<=length;i++){
       let char = Math.floor(Math.random()*str.length+1); // index value, we need to pick character on this index from the string
-      pass = str.charAt(char);
+      pass += str.charAt(char);
     } 
     setPassword(pass)
 
   } , [length, checknum , character, setPassword])
 
 //call password generator
-
+// introduction to useEffect hook for the calling of the function as if we call it as it is, it will end up in the infinite loop of callback and hence will not be rendered according to the scope of react
+useEffect(()=>{
+  passwordgenerator()
+},[length,checknum,character,passwordgenerator])
 
 
 
@@ -84,7 +87,7 @@ function App() {
           }}
           />
         </div>
-        <label htmlFor="charInput">Character</label>
+        <label htmlFor="charInput">Sp. Character</label>
         
         </div>
       </div>
