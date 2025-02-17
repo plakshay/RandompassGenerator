@@ -1,1 +1,1 @@
-![PAS Image](./public/PAS.png)
+![PAS Image](public/PAS.png)
