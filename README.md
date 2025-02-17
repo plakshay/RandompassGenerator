@@ -1,1 +1,1 @@
-![Alt text](./src/assets/PAS.png)
+![PAS Image](public/PAS.png)
